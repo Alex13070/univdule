@@ -18,6 +18,20 @@ Tipos de variables:
   <li>
     RecyclerViewer --> rv
   </li>
+  <li>
+    Label --> lbl
+  </li>
+  <li>
+    ImageView --> img
+  </li>
+  <li>
+    Button --> btn
+  </li>
+  <li>
+    RadioButton --> rad
+  </li>
+  
+  
 </li>
   
   
