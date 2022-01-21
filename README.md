@@ -30,9 +30,7 @@ Tipos de variables:
   <li>
     RadioButton --> rad
   </li>
-  
-  
-</li>
+</ul>
   
   
   
