@@ -8,8 +8,19 @@ abreviado, el noombre del layout sobre el que estamos trabajando y un nombre des
 
 Tipos de variables:
 
-  CheckButton --> chk
-  EditText --> et
-  RecyclerViewer --> rv
+<ul>
+  <li>
+    CheckButton --> chk
+  </li>
+  <li>
+    EditText --> et
+  </li>
+  <li>
+    RecyclerViewer --> rv
+  </li>
+</li>
+  
+  
+  
   
 
