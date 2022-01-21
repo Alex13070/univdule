@@ -7,7 +7,7 @@ Al momento de crear las variables e id de layouts, lo que haremos será poner el
 abreviado, el noombre del layout sobre el que estamos trabajando y un nombre descriptivo. 
 
 Tipos de variables:
-
+Los pives
   CheckButton --> chk
   EditText --> et
   RecyclerViewer --> rv
