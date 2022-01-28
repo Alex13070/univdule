@@ -32,7 +32,7 @@ Tipos de variables:
   </li>
 </ul>
   
-  
+  estoy provanto a ver si va esta vaina loca funsiona
   
   
 
