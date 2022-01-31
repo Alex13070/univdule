@@ -5,5 +5,6 @@ data class Fecha(
     var fecha:String,
     var contenido:String,
     var idUsuario:Int
+
 ) {
 }

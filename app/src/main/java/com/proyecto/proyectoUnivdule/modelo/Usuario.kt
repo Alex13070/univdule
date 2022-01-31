@@ -4,8 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+
+@Entity(tableName = "usuario")
 data class Usuario(
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_usuario")
     var idUsuario: Int,
