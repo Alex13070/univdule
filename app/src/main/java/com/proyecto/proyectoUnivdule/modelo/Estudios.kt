@@ -2,9 +2,18 @@ package com.proyecto.proyectoUnivdule.modelo
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "estudios")
+@Entity(tableName = "estudios",
+    foreignKeys = [ForeignKey(
+        entity = Usuario::class,
+        parentColumns = arrayOf("id_usuario"),
+        childColumns = arrayOf("id_usuario"),
+        onDelete = ForeignKey.CASCADE,
+        onUpdate = ForeignKey.CASCADE
+    )]
+)
 data class Estudios(
 
     @PrimaryKey(autoGenerate = true)
