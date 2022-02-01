@@ -9,7 +9,7 @@ interface NotaDAO {
     @Query("SELECT * FROM nota")
     fun findAll(): List<Nota>
 
-    @Query("SELECT * FROM nota WHERE id_notas = :id_nota")
+    @Query("SELECT * FROM nota WHERE id_nota = :id_nota")
     fun findById(id_nota: String): Nota
 
     @Delete

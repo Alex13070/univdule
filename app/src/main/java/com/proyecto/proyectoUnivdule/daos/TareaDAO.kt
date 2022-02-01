@@ -7,7 +7,6 @@ import com.proyecto.proyectoUnivdule.modelo.Tarea
 interface TareaDAO {
 
     @Query("SELECT * FROM tarea")
-
     fun findAll(): List<Tarea>
 
     @Query("SELECT * FROM tarea WHERE id_tarea = :id_tarea")
