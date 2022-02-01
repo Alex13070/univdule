@@ -25,6 +25,7 @@ import androidx.room.PrimaryKey
 data class Tarea(
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id_tarea")
     var idTarea: Int,
 
     @ColumnInfo(name = "nombre")
