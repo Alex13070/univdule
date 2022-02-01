@@ -18,8 +18,8 @@ import androidx.room.PrimaryKey
 data class Nota(
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id_notas")
-    var idNotas:Int,
+    @ColumnInfo(name = "id_nota")
+    var idNota:Int,
 
     @ColumnInfo(name = "nombre")
     var nombre:String,
