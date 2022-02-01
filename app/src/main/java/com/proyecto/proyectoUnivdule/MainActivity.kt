@@ -9,5 +9,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         print("Alex tkkkkk")
+        print("la vida es una tombola de luz y de color")
     }
 }
