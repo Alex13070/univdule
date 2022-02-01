@@ -13,7 +13,7 @@ interface ApuntesDAO {
     fun findById(id_apuntes: String): Apuntes
 
     @Delete
-    fun delete(apuntes: Apuntes);
+    fun delete(apuntes: Apuntes)
 
     @Update
     fun update(apuntes: Apuntes)

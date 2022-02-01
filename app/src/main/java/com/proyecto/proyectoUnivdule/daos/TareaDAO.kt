@@ -14,7 +14,7 @@ interface TareaDAO {
     fun findById(id_tarea: String): Tarea
 
     @Delete
-    fun delete(tarea: Tarea);
+    fun delete(tarea: Tarea)
 
     @Update
     fun update(tarea: Tarea)

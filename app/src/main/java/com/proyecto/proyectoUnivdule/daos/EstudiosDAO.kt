@@ -15,7 +15,7 @@ interface EstudiosDAO {
     fun findById(id_estudios: Int): Estudios
 
     @Delete
-    fun delete(estudios: Estudios);
+    fun delete(estudios: Estudios)
 
     @Update
     fun update(estudios: Estudios)

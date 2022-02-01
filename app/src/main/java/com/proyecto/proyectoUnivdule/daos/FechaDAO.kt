@@ -12,7 +12,7 @@ interface FechaDAO {
     fun findById(id_fecha: String): Fecha
 
     @Delete
-    fun delete(fecha: Fecha);
+    fun delete(fecha: Fecha)
 
     @Update
     fun update(fecha: Fecha)

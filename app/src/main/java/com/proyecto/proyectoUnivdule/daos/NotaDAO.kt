@@ -13,7 +13,7 @@ interface NotaDAO {
     fun findById(id_nota: String): Nota
 
     @Delete
-    fun delete(nota: Nota);
+    fun delete(nota: Nota)
 
     @Update
     fun update(nota: Nota)

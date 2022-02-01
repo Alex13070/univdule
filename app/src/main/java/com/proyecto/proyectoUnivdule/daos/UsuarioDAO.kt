@@ -13,7 +13,7 @@ interface UsuarioDAO {
     fun findById(id_usuario: Int): Usuario
 
     @Delete
-    fun delete(usuario: Usuario);
+    fun delete(usuario: Usuario)
 
     @Update
     fun update(usuario: Usuario)

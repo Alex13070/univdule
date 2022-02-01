@@ -13,7 +13,7 @@ interface AsignaturaDAO {
     fun findById(id_asignatura: String): Asignatura
 
     @Delete
-    fun delete(asignatura: Asignatura);
+    fun delete(asignatura: Asignatura)
 
     @Update
     fun update(asignatura: Asignatura)
