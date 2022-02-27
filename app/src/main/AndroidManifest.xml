@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoUnivdule">
         <activity
+            android:name=".RegistroActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InicioSesionActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

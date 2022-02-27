@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "fecha",
     foreignKeys = [ForeignKey(
@@ -29,5 +30,5 @@ data class Fecha(
     @ColumnInfo(name = "id_usuario")
     var idUsuario:Int
 
-) {
+) : Serializable{
 }

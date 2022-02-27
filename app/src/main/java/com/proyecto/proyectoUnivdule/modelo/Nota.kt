@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "nota",
 
@@ -29,5 +30,5 @@ data class Nota(
 
     @ColumnInfo(name = "id_asignatura")
     var idAsignatura:Int
-) {
+) : Serializable{
 }

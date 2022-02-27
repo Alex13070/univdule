@@ -3,6 +3,7 @@ package com.proyecto.proyectoUnivdule.modelo
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 
 @Entity(tableName = "usuario")
@@ -20,5 +21,5 @@ data class Usuario(
 
     @ColumnInfo(name = "clave")
     var clave: String
-) {
+) : Serializable {
 }
