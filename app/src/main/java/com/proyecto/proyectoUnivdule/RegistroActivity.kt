@@ -43,7 +43,6 @@ class RegistroActivity : AppCompatActivity(), View.OnClickListener {
     }
     private fun comprobarDatosRegistro() {
         var nombreUsuario = etNombreUsuario.text.toString()
-
         var usu: Optional<Usuario> = Optional.ofNullable(bbdd.usuarioDAO().findByUserName(nombreUsuario))
 
         if (!usu.isPresent)
@@ -51,6 +50,7 @@ class RegistroActivity : AppCompatActivity(), View.OnClickListener {
         else
             Toast.makeText(this, "El usuario introducido no existe.", Toast.LENGTH_SHORT).show()
 
+        limpiarCampos()
     }
 
     private fun registrarUsuario(){
@@ -58,6 +58,7 @@ class RegistroActivity : AppCompatActivity(), View.OnClickListener {
         var nombre = etNombre.text.toString()
         var contrasenya = etContrasenya.text.toString()
         var usuario = Usuario(0, nombreUsuario, nombre, contrasenya)
+
         try {
             bbdd.usuarioDAO().save(usuario)
         }

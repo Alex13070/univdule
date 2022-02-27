@@ -1,5 +1,6 @@
 package com.proyecto.proyectoUnivdule
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var intent = Intent(this, CalendarioActivity::class.java)
+        startActivity(intent)
 
     }
 }

@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#ffdb00"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InicioSesionActivity"
     android:layout_margin="10dp"
     android:orientation="vertical">
+
+    <!--android:background="#ffdb00"-->
 
     <ImageView
         android:src="@mipmap/univdule"
