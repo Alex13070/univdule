@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/logounivdule"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logounivdule"
         android:supportsRtl="true"
@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-        <activity/>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"/>
