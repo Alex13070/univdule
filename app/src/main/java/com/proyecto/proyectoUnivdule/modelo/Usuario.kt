@@ -2,11 +2,12 @@ package com.proyecto.proyectoUnivdule.modelo
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
 
-@Entity(tableName = "usuario")
+@Entity(tableName = "usuario"/*,indices = [Index(value = ["nombre_usuario"], unique = true)]*/)
 data class Usuario(
 
     @PrimaryKey(autoGenerate = true)

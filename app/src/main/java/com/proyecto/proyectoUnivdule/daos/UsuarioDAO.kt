@@ -20,4 +20,7 @@ interface UsuarioDAO {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun save(usuario: Usuario)
+
+    @Query("SELECT * FROM usuario WHERE nombre_usuario = :nombreUsuario")
+    fun findByUserName(nombreUsuario: String): Usuario
 }

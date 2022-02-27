@@ -3,6 +3,7 @@ package com.proyecto.proyectoUnivdule.daos
 
 import androidx.room.*
 import com.proyecto.proyectoUnivdule.modelo.Estudios
+import java.util.*
 
 
 @Dao
@@ -25,5 +26,7 @@ interface EstudiosDAO {
 
     @Query("SELECT * FROM estudios WHERE id_usuario = :id_usuario")
     fun findByUsuario(id_usuario: Int): List<Estudios>
+
+
 
 }

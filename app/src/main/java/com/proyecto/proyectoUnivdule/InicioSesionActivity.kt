@@ -1,16 +1,20 @@
 package com.proyecto.proyectoUnivdule
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.proyecto.proyectoUnivdule.administracionBBDD.UnivduleDB
+import com.proyecto.proyectoUnivdule.modelo.Usuario
+import java.util.*
 
 class InicioSesionActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var bbdd: RoomDatabase
+    private lateinit var bbdd: UnivduleDB
     private lateinit var etNombreUsuario: EditText
     private lateinit var etPassword: EditText
 
@@ -32,10 +36,22 @@ class InicioSesionActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun registro() {
-        TODO("Not yet implemented")
+        val intent = Intent(this,  RegistroActivity::class.java)
+        startActivity(intent)
     }
 
     private fun iniciarSesion() {
-        TODO("Not yet implemented")
+        var nombreUsuario = etNombreUsuario.text.toString()
+        var password = etPassword.text.toString()
+
+        var usu: Optional<Usuario> = Optional.of(bbdd.usuarioDAO().findByUserName(nombreUsuario))
+
+        if (usu.isPresent) {
+            var usuario = usu.get()
+
+        }
+        else
+            Toast.makeText(this, "El usuario introducido no existe", Toast.LENGTH_SHORT).show()
+
     }
 }
