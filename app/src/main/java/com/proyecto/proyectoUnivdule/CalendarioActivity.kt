@@ -1,5 +1,7 @@
 package com.proyecto.proyectoUnivdule
 
+import android.graphics.Color
+import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -63,6 +65,13 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
         botones.add(findViewById<Button>(R.id.btn33))
         botones.add(findViewById<Button>(R.id.btn34))
         botones.add(findViewById<Button>(R.id.btn35))
+        botones.add(findViewById<Button>(R.id.btn36))
+        botones.add(findViewById<Button>(R.id.btn37))
+        botones.add(findViewById<Button>(R.id.btn38))
+        botones.add(findViewById<Button>(R.id.btn39))
+        botones.add(findViewById<Button>(R.id.btn40))
+        botones.add(findViewById<Button>(R.id.btn41))
+        botones.add(findViewById<Button>(R.id.btn42))
 
         for (b in botones)
             b.setOnClickListener(this)
@@ -102,26 +111,27 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         var btn: Button = v as Button
-        Toast.makeText(this, (btn.text.toString()), Toast.LENGTH_SHORT).show()
+        var dia = Integer.parseInt(btn.text.toString())
+        var fecha = LocalDate.of(date.year, date.monthValue, dia)
+        TODO("Sistema de notificaciones de la aplicacion")
     }
 
     private fun procesarFecha() {
         var length = date.month.length(GregorianCalendar().isLeapYear(date.year))
-
-        System.err.println(length)
-
         var diaSemana = date.dayOfWeek.value
         var i = 1
         var dia = 1
         for (b: Button in botones) {
             if (i >= diaSemana && dia <= length){
                 b.setEnabled(true)
+                b.background.setColorFilter(Color.rgb(214, 215, 215), PorterDuff.Mode.SRC_ATOP)
                 b.text = dia.toString()
                 dia++
             }
             else{
                 b.setEnabled(false)
                 b.text = ""
+                b.background.setColorFilter(Color.rgb(255, 219, 0), PorterDuff.Mode.SRC_ATOP)
             }
             i++
         }
