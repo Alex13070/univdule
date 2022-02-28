@@ -28,7 +28,7 @@ data class Estudios(
     var curso: Int,
 
     @ColumnInfo(name = "id_usuario")
-    var idUsuario: String
+    var idUsuario: Int
 ) : Serializable{
 
 }

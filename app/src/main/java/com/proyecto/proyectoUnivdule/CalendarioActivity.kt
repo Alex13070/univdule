@@ -76,14 +76,6 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
         for (b in botones)
             b.setOnClickListener(this)
 
-        /*
-        int diaDeLaSemana;
-		LocalDate fecha = LocalDate.of(anio, mes, dia);
-
-		diaDeLaSemana = fecha.getDayOfWeek().getValue();
-
-         */
-
         btnAvanzar = findViewById(R.id.btnCalendarioAvanzar)
         btnRetroceder = findViewById(R.id.btnCalendarioRetroceder)
         tvMes = findViewById(R.id.tvCalendarioTexto)
