@@ -6,34 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".RegistroActivity"
     android:orientation="vertical"
-    android:layout_margin="10dp">
+    android:background="#ffdb00">
 
-    <EditText
-        android:id="@+id/etRegistroNombreUsuario"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Nombre de Usuario"/>
+        android:layout_margin="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etRegistroNombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Nombre"/>
+        <EditText
+            android:id="@+id/etRegistroNombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Nombre de Usuario"/>
 
-    <EditText
-        android:id="@+id/etRegistroClave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Contraseña"/>
+        <EditText
+            android:id="@+id/etRegistroNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Nombre"/>
 
-    <Button
-        android:id="@+id/btnRegistroRegistrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Registrar"/>
+        <EditText
+            android:id="@+id/etRegistroClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Contraseña"/>
+
+        <Button
+            android:id="@+id/btnRegistroRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Registrar"/>
+
+    </LinearLayout>
 
 </LinearLayout>

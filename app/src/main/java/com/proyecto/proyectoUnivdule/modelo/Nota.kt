@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
-@Entity(tableName = "nota",
+@Entity(tableName = "nota"/*,
 
     foreignKeys = [ForeignKey(
         entity = Asignatura::class,
@@ -14,7 +14,7 @@ import java.io.Serializable
         childColumns = arrayOf("id_asignatura"),
         onDelete = ForeignKey.CASCADE,
         onUpdate = ForeignKey.CASCADE
-    )]
+    )]*/
 )
 data class Nota(
 

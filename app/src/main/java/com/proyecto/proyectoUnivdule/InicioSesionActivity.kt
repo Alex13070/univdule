@@ -61,7 +61,7 @@ class InicioSesionActivity : AppCompatActivity(), View.OnClickListener {
 
         if (usu.isPresent)
             if (usu.get().clave.equals(password))
-                iniciarSesion()
+                iniciarSesion(usu.get().idUsuario)
             else
                 Toast.makeText(this, "Usuario o contraseña incorrectos.", Toast.LENGTH_SHORT).show()
         else
@@ -69,8 +69,9 @@ class InicioSesionActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    private fun iniciarSesion() {
+    private fun iniciarSesion(id: Int) {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("id_usuario", id)
         startActivity(intent)
     }
 }

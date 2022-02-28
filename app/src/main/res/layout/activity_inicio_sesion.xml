@@ -5,44 +5,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InicioSesionActivity"
-    android:layout_margin="10dp"
+    android:layout_margin="0dp"
+    android:background="#ffdb00"
     android:orientation="vertical">
 
-    <!--android:background="#ffdb00"-->
-
-    <ImageView
-        android:src="@mipmap/univdule"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginBottom="20dp"/>
-
-    <EditText
-        android:id="@+id/etInicioSesionNombreUsuario"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Nombre de usuario"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
 
-    <EditText
-        android:id="@+id/etInicioSesionPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Contraseña"/>
+        <ImageView
+            android:src="@mipmap/univdule"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"/>
 
-    <Button
-        android:id="@+id/btnInicioSesionInicioSesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Iniciar Sesion"
-        android:clickable="true"
-        />
+        <EditText
+            android:id="@+id/etInicioSesionNombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Nombre de usuario"/>
 
-    <Button
-        android:id="@+id/btnInicioSesionRegistro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="REGISTRO"
-        android:clickable="true"/>
+        <EditText
+            android:id="@+id/etInicioSesionPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Contraseña"/>
+
+        <Button
+            android:id="@+id/btnInicioSesionInicioSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Iniciar Sesion"
+            android:clickable="true"
+            />
+
+        <Button
+            android:id="@+id/btnInicioSesionRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO"
+            android:clickable="true"/>
+
+    </LinearLayout>
 
 </LinearLayout>

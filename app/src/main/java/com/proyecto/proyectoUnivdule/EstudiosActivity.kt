@@ -3,15 +3,23 @@ package com.proyecto.proyectoUnivdule
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
+import com.proyecto.proyectoUnivdule.adapterDatos.AdapterEstudios
 import com.proyecto.proyectoUnivdule.administracionBBDD.UnivduleDB
 import com.proyecto.proyectoUnivdule.modelo.Estudios
 import java.lang.Exception
+import java.util.*
+import java.util.function.Predicate
+import kotlin.collections.ArrayList
 
 class EstudiosActivity : AppCompatActivity() {
 
@@ -23,14 +31,18 @@ class EstudiosActivity : AppCompatActivity() {
     private lateinit var etCurso: EditText
     private lateinit var btnRegistrar: Button
 
+    //RecycleViewer
+    private lateinit var listaEstudios: ArrayList<Estudios>
+    private lateinit var listaTemporal: ArrayList<Estudios>
+    private lateinit var rvEstudios: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estudios)
-        //idUsuario = intent.getIntExtra("usuario", 0)
+        idUsuario = intent.getIntExtra("id_usuario", -1)
 
         bbdd = Room.databaseBuilder(this, UnivduleDB::class.java, "univdule").allowMainThreadQueries().fallbackToDestructiveMigration().build()
 
-        idUsuario = 2
 
         btnAdd = findViewById(R.id.btnEstudiosAdd)
         btnAdd.setOnClickListener {
@@ -39,19 +51,99 @@ class EstudiosActivity : AppCompatActivity() {
 
 
 
+        listaEstudios = bbdd.estudiosDAO().findByUsuario(idUsuario) as ArrayList<Estudios>
+        listaTemporal = ArrayList(listaEstudios)
+
+        rvEstudios = findViewById<RecyclerView>(R.id.rvEstudios)
+
+        rellenarRV()
+
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.menu_item, menu)
+        val item = menu?.findItem(R.id.search_action)
+        val searchView = item?.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                listaTemporal.clear()
+                val searchText = newText!!.toLowerCase(Locale.getDefault())
+
+                if (searchText.isNotEmpty()) {
+
+                    listaEstudios.forEach {
+
+                        if (it.nombre.toLowerCase().contains(searchText)){
+                            listaTemporal.add(it)
+                        }
+
+                    }
+
+                    rvEstudios.adapter?.notifyDataSetChanged()
+
+                }
+                else {
+                    listaTemporal.clear()
+                    listaTemporal.addAll(listaEstudios)
+                    rvEstudios.adapter!!.notifyDataSetChanged()
+                }
+
+
+                return false
+            }
+
+        })
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    private fun rellenarRV() {
+        rvEstudios.layoutManager = LinearLayoutManager(this)
+        var adapter = AdapterEstudios(listaTemporal)
+
+        adapter.setOnItemClickListener(object : AdapterEstudios.OnItemClickListener{
+            override fun onItemClick(position: Int) {
+                cambiarActivity(position)
+            }
+        })
+
+        rvEstudios.adapter = adapter
+    }
+
+    private fun cambiarActivity(position: Int) {
+        var idEstudios = listaEstudios[position].idEstudios
+        Toast.makeText(this, (listaEstudios[position]).toString(), Toast.LENGTH_SHORT).show()
     }
 
     private fun registrar() {
-        System.err.println("osvfjnbf")
         var s = ""
 
         try {
             val nombre = etNombre.text.toString()
             val curso = Integer.parseInt(etCurso.text.toString())
 
-            val estudios =  Estudios(0, nombre = nombre, curso = curso, idUsuario = idUsuario)
-            bbdd.estudiosDAO().save(estudios = estudios)
-            s = "Estudios guardados correctamente"
+            if (etNombre.text.isNotEmpty() && etCurso.text.isNotEmpty()) {
+
+                val estudios =  Estudios(0, nombre = nombre, curso = curso, idUsuario = idUsuario)
+                bbdd.estudiosDAO().save(estudios = estudios)
+
+                listaEstudios.add(estudios)
+                rellenarRV()
+
+                s = "Estudios guardados correctamente"
+
+            }
+            else
+                s = ""
+
 
         }
         catch (e: Exception) {
@@ -66,12 +158,6 @@ class EstudiosActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this@EstudiosActivity)
         val view = layoutInflater.inflate(R.layout.dialogo_estudios, null)
 
-        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
-            view.getBackground().setAlpha(0);
-        } else {
-            view.setBackgroundColor(ContextCompat.getColor(this, android.R.color.transparent))
-        }
-
         builder.setView(view)
 
         val dialog = builder.create()
@@ -83,6 +169,7 @@ class EstudiosActivity : AppCompatActivity() {
 
         btnRegistrar.setOnClickListener {
             registrar()
+            dialog.hide()
         }
     }
 

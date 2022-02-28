@@ -11,6 +11,15 @@
         android:theme="@style/Theme.ProyectoUnivdule">
         <activity
             android:name=".EstudiosActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarioActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".RegistroActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InicioSesionActivity"
             android:exported="true">
 
             <intent-filter>
@@ -21,17 +30,8 @@
 
         </activity>
         <activity
-            android:name=".CalendarioActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".RegistroActivity"
-            android:exported="true" />
-        <activity
-            android:name=".InicioSesionActivity"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"/>
     </application>
 
 </manifest>
