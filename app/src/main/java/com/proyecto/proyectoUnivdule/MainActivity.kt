@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -15,9 +16,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var bbdd: UnivduleDB
     private var idUsuario = -1
-    private lateinit var btnCalendario: Button
-    private lateinit var btnEstudios: Button
 
+    private lateinit var btnCalendario: View
+    private lateinit var btnEstudios: View
+    private lateinit var btnTareas: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +29,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         btnCalendario = findViewById(R.id.btnMainCalendario)
         btnEstudios = findViewById(R.id.btnMainEstudios)
+        btnTareas = findViewById(R.id.btnMainTarea)
 
         btnEstudios.setOnClickListener(this)
         btnCalendario.setOnClickListener(this)
+        btnTareas.setOnClickListener(this)
 
 
     }
@@ -38,7 +42,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.btnMainCalendario -> empezarCalendario()
             R.id.btnMainEstudios -> empezarEstudios()
+            R.id.btnMainTarea -> empezarTareas()
         }
+    }
+
+    private fun empezarTareas() {
+        Toast.makeText(this, "Por implementar", Toast.LENGTH_SHORT).show()
     }
 
     private fun empezarEstudios() {

@@ -105,7 +105,7 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
         var btn: Button = v as Button
         var dia = Integer.parseInt(btn.text.toString())
         var fecha = LocalDate.of(date.year, date.monthValue, dia)
-        TODO("Sistema de notificaciones de la aplicacion")
+        //TODO("Sistema de notificaciones de la aplicacion")
     }
 
     private fun procesarFecha() {

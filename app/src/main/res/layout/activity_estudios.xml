@@ -7,6 +7,139 @@
     tools:context=".EstudiosActivity"
     android:background="#ffdb00">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.02"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.11"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.13"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.87"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.89"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.98"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gVer1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.035"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gVer2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.485"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gVer3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.515"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gVer4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.965"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Estudios"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/gHor0"
+        app:layout_constraintBottom_toTopOf="@id/gHor1"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer4"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEstudios"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/gHor2"
+        app:layout_constraintBottom_toTopOf="@id/gHor3"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer4"/>
+
+    <Button
+        android:id="@+id/btnEstudiosAdd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Registrar estudios"
+        app:layout_constraintTop_toBottomOf="@id/gHor4"
+        app:layout_constraintBottom_toTopOf="@id/gHor5"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+    <Button
+        android:id="@+id/btnEstudiosDelete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Borrar estudios"
+        app:layout_constraintTop_toBottomOf="@id/gHor4"
+        app:layout_constraintBottom_toTopOf="@id/gHor5"
+        app:layout_constraintStart_toEndOf="@id/gVer3"
+        app:layout_constraintEnd_toStartOf="@id/gVer4"/>
+
+    <!--
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,11 +176,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="0dp"/>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
