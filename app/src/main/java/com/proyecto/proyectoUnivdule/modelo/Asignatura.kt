@@ -36,8 +36,9 @@ data class Asignatura(
 
     @ColumnInfo(name = "id_estudios")
     var idEstudios: Int,
-
+/*
     @ColumnInfo(name = "id_evento")
     var idEvento: Int
+*/
 ) : Serializable{
 }

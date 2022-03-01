@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EstudiosActivity"
+    tools:context=".AsignaturasActivity"
     android:background="#ffdb00">
 
     <androidx.constraintlayout.widget.Guideline
@@ -101,7 +101,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="Estudios"
+        android:text="Asignaturas"
         android:textColor="@color/black"
         android:textSize="40dp"
         android:textStyle="bold"
@@ -111,7 +111,7 @@
         app:layout_constraintEnd_toStartOf="@id/gVer4"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEstudios"
+        android:id="@+id/rvAsignaturas"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/gHor2"
@@ -120,20 +120,20 @@
         app:layout_constraintEnd_toStartOf="@id/gVer4"/>
 
     <Button
-        android:id="@+id/btnEstudiosAdd"
+        android:id="@+id/btnAsignaturasAdd"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Registrar estudios"
+        android:text="Registrar asignatura"
         app:layout_constraintTop_toBottomOf="@id/gHor4"
         app:layout_constraintBottom_toTopOf="@id/gHor5"
         app:layout_constraintStart_toEndOf="@id/gVer1"
         app:layout_constraintEnd_toStartOf="@id/gVer2"/>
 
     <Button
-        android:id="@+id/btnEstudiosDelete"
+        android:id="@+id/btnAsignaturasDelete"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Borrar estudios"
+        android:text="Borrar asignatura"
         app:layout_constraintTop_toBottomOf="@id/gHor4"
         app:layout_constraintBottom_toTopOf="@id/gHor5"
         app:layout_constraintStart_toEndOf="@id/gVer3"

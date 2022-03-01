@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EstudiosActivity"
+    tools:context=".ApuntesActivity"
     android:background="#ffdb00">
 
     <androidx.constraintlayout.widget.Guideline
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.87"
+        app:layout_constraintGuide_percent="0.76"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.89"
+        app:layout_constraintGuide_percent="0.78"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -58,8 +58,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.87"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.89"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_percent="0.98"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gVer1"
@@ -101,7 +121,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="Estudios"
+        android:text="Apuntes"
         android:textColor="@color/black"
         android:textSize="40dp"
         android:textStyle="bold"
@@ -111,7 +131,7 @@
         app:layout_constraintEnd_toStartOf="@id/gVer4"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEstudios"
+        android:id="@+id/rvApuntes"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/gHor2"
@@ -120,23 +140,33 @@
         app:layout_constraintEnd_toStartOf="@id/gVer4"/>
 
     <Button
-        android:id="@+id/btnEstudiosAdd"
+        android:id="@+id/btnApuntesAdd"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Registrar estudios"
+        android:text="Registrar apuntes"
         app:layout_constraintTop_toBottomOf="@id/gHor4"
         app:layout_constraintBottom_toTopOf="@id/gHor5"
         app:layout_constraintStart_toEndOf="@id/gVer1"
         app:layout_constraintEnd_toStartOf="@id/gVer2"/>
 
     <Button
-        android:id="@+id/btnEstudiosDelete"
+        android:id="@+id/btnApuntesDelete"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Borrar estudios"
+        android:text="Borrar apuntes"
         app:layout_constraintTop_toBottomOf="@id/gHor4"
         app:layout_constraintBottom_toTopOf="@id/gHor5"
         app:layout_constraintStart_toEndOf="@id/gVer3"
+        app:layout_constraintEnd_toStartOf="@id/gVer4"/>
+
+    <Button
+        android:id="@+id/btnApuntesTareas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Tareas"
+        app:layout_constraintTop_toBottomOf="@id/gHor6"
+        app:layout_constraintBottom_toTopOf="@id/gHor7"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
         app:layout_constraintEnd_toStartOf="@id/gVer4"/>
 
 
