@@ -210,8 +210,9 @@ class AsignaturasActivity : AppCompatActivity() {
                 val asignatura =  Asignatura(0, nombre = nombre, idEstudios = idEstudios)
                 bbdd.asignaturaDAO().save(asignatura = asignatura)
 
-                listaAsignaturas.add(asignatura)
-                listaTemporal.add(asignatura)
+                listaAsignaturas = bbdd.asignaturaDAO().findByEstudios(idEstudios) as ArrayList<Asignatura>
+                listaTemporal.clear()
+                listaTemporal.addAll(listaAsignaturas)
                 rvAsignatura.adapter!!.notifyDataSetChanged()
 
                 s = "Estudios guardados correctamente"

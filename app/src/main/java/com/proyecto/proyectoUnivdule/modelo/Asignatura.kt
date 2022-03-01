@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 import java.io.Serializable
 
 
-@Entity(tableName = "asignatura"/*,
+@Entity(tableName = "asignatura",
     foreignKeys = [
         ForeignKey(
             entity = Estudios::class,
@@ -15,15 +15,15 @@ import java.io.Serializable
             childColumns = arrayOf("id_estudios"),
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
-        ),
+        )/*,
         ForeignKey(
             entity = Fecha::class,
             parentColumns = arrayOf("id_fecha"),
             childColumns = arrayOf("id_evento"),
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
-        )
-    ]*/
+        )*/
+    ]
 )
 data class Asignatura(
 
@@ -35,7 +35,7 @@ data class Asignatura(
     var nombre: String,
 
     @ColumnInfo(name = "id_estudios")
-    var idEstudios: Int,
+    var idEstudios: Int
 /*
     @ColumnInfo(name = "id_evento")
     var idEvento: Int

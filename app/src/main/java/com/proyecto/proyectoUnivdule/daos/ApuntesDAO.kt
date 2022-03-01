@@ -22,5 +22,5 @@ interface ApuntesDAO {
     fun save(apuntes: Apuntes)
 
     @Query("SELECT * FROM apuntes WHERE id_asignatura = :id_asignatura")
-    fun findByEstudios(id_asignatura: Int): List<Apuntes>
+    fun findByAsignatura(id_asignatura: Int): List<Apuntes>
 }

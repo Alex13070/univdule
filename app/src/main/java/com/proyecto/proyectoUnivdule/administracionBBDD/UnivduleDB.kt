@@ -8,7 +8,7 @@ import com.proyecto.proyectoUnivdule.modelo.*
 
 @Database(
     entities = [Apuntes::class, Asignatura::class, Estudios::class, Fecha::class, Nota::class, Tarea::class, Usuario::class],
-    version = 17
+    version = 20
 )
 abstract class UnivduleDB: RoomDatabase() {
 

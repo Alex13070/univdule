@@ -77,7 +77,7 @@ class ApuntesActivity : AppCompatActivity() {
 
 
         //RecycleViewer
-        listaApuntes = bbdd.apuntesDAO().findByEstudios(id_asignatura = idAsignatura) as ArrayList<Apuntes>
+        listaApuntes = bbdd.apuntesDAO().findByAsignatura(id_asignatura = idAsignatura) as ArrayList<Apuntes>
         listaTemporal = ArrayList(listaApuntes)
 
         rvApuntes = findViewById<RecyclerView>(R.id.rvApuntes)
@@ -213,8 +213,11 @@ class ApuntesActivity : AppCompatActivity() {
                 val apuntes =  Apuntes(idApuntes = 0, nombre = nombre, direccion = direccion, idAsignatura = idAsignatura)
                 bbdd.apuntesDAO().save(apuntes = apuntes)
 
-                listaApuntes.add(apuntes)
-                listaTemporal.add(apuntes)
+
+
+                listaApuntes = bbdd.apuntesDAO().findByAsignatura(idAsignatura) as ArrayList<Apuntes>
+                listaTemporal.clear()
+                listaTemporal.addAll(listaApuntes)
                 rvApuntes.adapter!!.notifyDataSetChanged()
 
                 s = "Estudios guardados correctamente"

@@ -210,9 +210,10 @@ class EstudiosActivity : AppCompatActivity() {
                 val estudios =  Estudios(0, nombre = nombre, curso = curso, idUsuario = idUsuario)
                 bbdd.estudiosDAO().save(estudios = estudios)
 
-                listaEstudios.add(estudios)
-                listaTemporal.add(estudios)
-                rvEstudios.adapter!!.notifyDataSetChanged()
+                listaEstudios = bbdd.estudiosDAO().findByUsuario(idUsuario) as ArrayList<Estudios>
+                listaTemporal.clear()
+                listaTemporal.addAll(listaEstudios)
+                rvEstudios.adapter?.notifyDataSetChanged()
 
                 s = "Estudios guardados correctamente"
 
