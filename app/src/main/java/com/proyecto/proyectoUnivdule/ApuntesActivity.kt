@@ -63,8 +63,7 @@ class ApuntesActivity : AppCompatActivity() {
         //Botones
         btnAdd = findViewById(R.id.btnApuntesAdd)
         btnAdd.setOnClickListener {
-            //manejarDialog()
-            Toast.makeText(this, "btnAdd", Toast.LENGTH_SHORT).show()
+            manejarDialog()
         }
         btnBorrar = findViewById(R.id.btnApuntesDelete)
         btnBorrar.setOnClickListener {
@@ -198,14 +197,7 @@ class ApuntesActivity : AppCompatActivity() {
 
     //Cambiar de actividad
     private fun cambiarActivity(apuntes: Apuntes) {
-        val intent = Intent(this, ApuntesActivity::class.java)
-        intent.putExtra("id_apuntes", apuntes.idApuntes)
-        try {
-            startActivity(intent)
-        }
-        catch (e: Exception) {
-            Toast.makeText(this, "Error al cambiar de actividad", Toast.LENGTH_SHORT).show()
-        }
+        Toast.makeText(this, "${apuntes.toString()}", Toast.LENGTH_SHORT).show()
     }
 
     //Regjstrar unos estudios

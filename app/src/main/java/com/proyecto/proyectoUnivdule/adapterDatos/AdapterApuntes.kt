@@ -44,7 +44,7 @@ class AdapterApuntes(private val datos: ArrayList<Apuntes>) : RecyclerView.Adapt
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderDatos {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_asignatura, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_apuntes, parent, false)
         return ViewHolderDatos(view, listener)
     }
 
