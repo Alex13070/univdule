@@ -15,6 +15,7 @@ import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
+import com.github.barteksc.pdfviewer.PDFView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.proyecto.proyectoUnivdule.adapterDatos.AdapterAsignaturas
 import com.proyecto.proyectoUnivdule.adapterDatos.AdapterEstudios

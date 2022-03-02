@@ -1,55 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InicioSesionActivity"
-    android:layout_margin="0dp"
-    android:background="#ffdb00"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffdb00">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.06"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.41"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.48"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.55"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.62"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.69"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.8"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.88"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.90"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.98"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gVer1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="10dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.035"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:src="@mipmap/univdule"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_marginBottom="20dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gVer2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.965"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/etInicioSesionNombreUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="Nombre de usuario"/>
+    <ImageView
+        android:src="@mipmap/univdule"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/gHor1"
+        app:layout_constraintBottom_toTopOf="@id/gHor2"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
 
-        <EditText
-            android:id="@+id/etInicioSesionPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="Contraseña"/>
 
-        <Button
-            android:id="@+id/btnInicioSesionInicioSesion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Iniciar Sesion"
-            android:clickable="true"
-            />
 
-        <Button
-            android:id="@+id/btnInicioSesionRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="REGISTRO"
-            android:clickable="true"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Nombre de usuario"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@id/gHor2"
+        app:layout_constraintBottom_toTopOf="@id/gHor3"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/etInicioSesionNombreUsuario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Nombre de usuario"
+        app:layout_constraintTop_toBottomOf="@id/gHor3"
+        app:layout_constraintBottom_toTopOf="@id/gHor4"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
 
-</LinearLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Contraseña"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@id/gHor4"
+        app:layout_constraintBottom_toTopOf="@id/gHor5"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+    <EditText
+        android:id="@+id/etInicioSesionPassword"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:password="true"
+        android:hint="Contraseña"
+        app:layout_constraintTop_toBottomOf="@id/gHor5"
+        app:layout_constraintBottom_toTopOf="@id/gHor6"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+    <Button
+        android:id="@+id/btnInicioSesionInicioSesion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Iniciar Sesion"
+        app:layout_constraintTop_toBottomOf="@id/gHor9"
+        app:layout_constraintBottom_toTopOf="@id/gHor10"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+    <Button
+        android:id="@+id/btnInicioSesionRegistro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="REGISTRO"
+        app:layout_constraintTop_toBottomOf="@id/gHor11"
+        app:layout_constraintBottom_toTopOf="@id/gHor12"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

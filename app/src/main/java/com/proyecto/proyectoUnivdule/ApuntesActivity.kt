@@ -197,7 +197,9 @@ class ApuntesActivity : AppCompatActivity() {
 
     //Cambiar de actividad
     private fun cambiarActivity(apuntes: Apuntes) {
-        Toast.makeText(this, "${apuntes.toString()}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, VisualizarPdfActivity::class.java)
+        intent.putExtra("url", apuntes.direccion)
+        startActivity(intent)
     }
 
     //Regjstrar unos estudios
