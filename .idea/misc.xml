@@ -4,17 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/bg_card.xml" value="0.1" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.14166666666666666" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/ic_menu_camera.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/side_nav_bar.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_apuntes.xml" value="0.2" />
-        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_asignaturas.xml" value="0.18" />
+        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_asignaturas.xml" value="0.25" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_calendario.xml" value="0.25" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_estudios.xml" value="0.22" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_inicio_sesion.xml" value="0.25" />
-        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_registro.xml" value="0.2" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_visualizar_pdf.xml" value="0.22" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/adapter_estudios.xml" value="0.1" />

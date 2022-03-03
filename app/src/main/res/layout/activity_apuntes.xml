@@ -117,18 +117,17 @@
         app:layout_constraintGuide_percent="0.965"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="Apuntes"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/gHor0"
+        android:scaleX="3.8"
+        android:scaleY="3.8"
+        android:src="@mipmap/apuntes"
         app:layout_constraintBottom_toTopOf="@id/gHor1"
+        app:layout_constraintEnd_toStartOf="@id/gVer4"
         app:layout_constraintStart_toEndOf="@id/gVer1"
-        app:layout_constraintEnd_toStartOf="@id/gVer4"/>
+        app:layout_constraintTop_toBottomOf="@id/gHor0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvApuntes"
@@ -163,11 +162,11 @@
         android:id="@+id/btnApuntesTareas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Tareas"
-        app:layout_constraintTop_toBottomOf="@id/gHor6"
+        android:text="Añadir tarea"
         app:layout_constraintBottom_toTopOf="@id/gHor7"
+        app:layout_constraintEnd_toStartOf="@id/gVer4"
         app:layout_constraintStart_toEndOf="@id/gVer1"
-        app:layout_constraintEnd_toStartOf="@id/gVer4"/>
+        app:layout_constraintTop_toBottomOf="@id/gHor6" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

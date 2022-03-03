@@ -116,7 +116,7 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
         for (b: Button in botones) {
             if (i >= diaSemana && dia <= length){
                 b.setEnabled(true)
-                b.background.setColorFilter(Color.rgb(214, 215, 215), PorterDuff.Mode.SRC_ATOP)
+                b.background.setColorFilter(Color.rgb(255, 255, 255), PorterDuff.Mode.SRC_ATOP)
                 b.text = dia.toString()
                 dia++
             }

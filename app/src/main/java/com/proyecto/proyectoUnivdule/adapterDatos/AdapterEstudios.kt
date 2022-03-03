@@ -14,9 +14,9 @@ class AdapterEstudios(private val datos: ArrayList<Estudios>) : RecyclerView.Ada
 
     private lateinit var listener: OnItemClickListener
 
-        interface OnItemClickListener{
-            fun onItemClick(position: Int)
-        }
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
+    }
 
     fun setOnItemClickListener(listener: OnItemClickListener){
         this.listener = listener

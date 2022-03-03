@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.11"
+        app:layout_constraintGuide_percent="0.13"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -145,18 +145,16 @@
         app:layout_constraintGuide_percent="0.965"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center"
-        android:text="Registro"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/gHor0"
+        android:scaleX="3.8"
+        android:scaleY="3.8"
+        android:src="@mipmap/registro"
         app:layout_constraintBottom_toTopOf="@id/gHor1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"
         app:layout_constraintStart_toEndOf="@id/gVer1"
-        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+        app:layout_constraintTop_toBottomOf="@id/gHor0" />
 
     <TextView
         android:layout_width="0dp"

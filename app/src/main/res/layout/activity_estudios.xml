@@ -97,18 +97,17 @@
         app:layout_constraintGuide_percent="0.965"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="Estudios"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/gHor0"
+        android:scaleX="3.6"
+        android:scaleY="3.6"
+        android:src="@mipmap/estudios_logo"
         app:layout_constraintBottom_toTopOf="@id/gHor1"
+        app:layout_constraintEnd_toStartOf="@id/gVer4"
         app:layout_constraintStart_toEndOf="@id/gVer1"
-        app:layout_constraintEnd_toStartOf="@id/gVer4"/>
+        app:layout_constraintTop_toBottomOf="@id/gHor0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEstudios"

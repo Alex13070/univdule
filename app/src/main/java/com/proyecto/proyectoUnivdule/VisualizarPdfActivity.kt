@@ -24,6 +24,8 @@ class VisualizarPdfActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
         pdfView = findViewById(R.id.pdf_viewer)
 
+
+
         AdapterPdfStream(pdfView, progressBar).execute(url)
 
 

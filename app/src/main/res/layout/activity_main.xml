@@ -94,14 +94,17 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:src="@mipmap/estudios" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Estudios"
             android:layout_gravity="bottom"
-            android:background="#8c000000"
+            android:background="@drawable/bg_card"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
             android:textStyle="bold"/>
@@ -121,14 +124,17 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@mipmap/calendario" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Calendario"
             android:layout_gravity="bottom"
-            android:background="#8c000000"
+            android:background="@drawable/bg_card"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
             android:textStyle="bold"/>
@@ -148,14 +154,17 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:src="@mipmap/tareas" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Tarea"
             android:layout_gravity="bottom"
-            android:background="#8c000000"
+            android:background="@drawable/bg_card"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
             android:textStyle="bold"/>
