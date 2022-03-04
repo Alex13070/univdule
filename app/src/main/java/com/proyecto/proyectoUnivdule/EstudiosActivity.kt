@@ -85,7 +85,7 @@ class EstudiosActivity : AppCompatActivity() {
         if (borrar)
             DrawableCompat.setTint(buttonDrawable, Color.rgb(187,134,252))
         else
-            DrawableCompat.setTint(buttonDrawable, Color.rgb(98,0,238))
+            DrawableCompat.setTint(buttonDrawable, Color.rgb(33,0,255))
 
     }
 

@@ -22,6 +22,6 @@ interface TareaDAO {
     fun save(tarea: Tarea)
 
     @Query("SELECT * FROM tarea WHERE id_asignatura = :id_asignatura")
-    fun findByEstudios(id_asignatura: Int): List<Tarea>
+    fun findByAsignatura(id_asignatura: Int): List<Tarea>
 
 }

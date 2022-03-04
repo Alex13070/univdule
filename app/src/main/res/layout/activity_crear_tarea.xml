@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearTareaActivity"
+    android:orientation="vertical"
+    android:background="#ffdb00">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.02"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.13"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.17"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.24"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.31"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.38"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.45"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.52"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.73"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.89"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gHor12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.98"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gVer1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.035"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gVer2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.965"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleX="3.2"
+        android:scaleY="3.2"
+        android:src="@mipmap/tarea"
+        app:layout_constraintBottom_toTopOf="@id/gHor1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintTop_toBottomOf="@id/gHor0" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Nombre"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@id/gHor2"
+        app:layout_constraintBottom_toTopOf="@id/gHor3"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+    <EditText
+        android:id="@+id/etAddTareaNombre"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Nombre de Usuario"
+        app:layout_constraintBottom_toTopOf="@id/gHor4"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintTop_toBottomOf="@id/gHor3" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Fecha limite"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@id/gHor4"
+        app:layout_constraintBottom_toTopOf="@id/gHor5"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+    <EditText
+        android:id="@+id/etAddTareaFecha"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Fecha limite"
+        android:editable="false"
+        app:layout_constraintTop_toBottomOf="@id/gHor5"
+        app:layout_constraintBottom_toTopOf="@id/gHor6"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Contenido"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@id/gHor6"
+        app:layout_constraintBottom_toTopOf="@id/gHor7"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+
+
+    <com.google.android.material.textfield.TextInputEditText
+
+        android:id="@+id/etAddTareaContenido"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:inputType="textMultiLine"
+        android:lines="6"
+        android:gravity="top"
+        android:overScrollMode="always"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideInset"
+        android:scrollHorizontally="false"
+        android:background="@color/white"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintBottom_toTopOf="@id/gHor10"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintTop_toBottomOf="@id/gHor7" />
+
+
+    <Button
+        android:id="@+id/btnAddTareaAdd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Guardar"
+        app:layout_constraintTop_toBottomOf="@id/gHor11"
+        app:layout_constraintBottom_toTopOf="@id/gHor12"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
+        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

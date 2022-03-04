@@ -10,18 +10,22 @@
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/drawable/side_nav_bar.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_add_tarea.xml" value="0.18680555555555556" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_apuntes.xml" value="0.2" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_asignaturas.xml" value="0.25" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_calendario.xml" value="0.25" />
+        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_crear_tarea.xml" value="0.16532258064516128" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_estudios.xml" value="0.22" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_inicio_sesion.xml" value="0.25" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_registro.xml" value="0.2" />
+        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_tarea.xml" value="0.18" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/activity_visualizar_pdf.xml" value="0.22" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/adapter_estudios.xml" value="0.1" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/dialogo.xml" value="0.22850877192982455" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/dialogo_apuntes.xml" value="0.16" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/dialogo_asignaturas.xml" value="0.13090277777777778" />
+        <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/dialogo_date_picker.xml" value="0.1" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/dialogo_estudios.xml" value="0.22850877192982455" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/item_apuntes.xml" value="0.25" />
         <entry key="..\:/Users/ALEX/Desktop/Android/univdule/app/src/main/res/layout/item_asignatura.xml" value="0.2" />
