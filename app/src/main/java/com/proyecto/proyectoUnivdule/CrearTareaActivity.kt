@@ -42,6 +42,8 @@ class CrearTareaActivity : AppCompatActivity() {
         bbdd = Room.databaseBuilder(this, UnivduleDB::class.java, "univdule").allowMainThreadQueries().fallbackToDestructiveMigration().build()
         idAsignatura = intent.getIntExtra("id_asignatura", -1)
 
+        System.err.println(idAsignatura)
+
         //Inicializar variables
         etNombre = findViewById(R.id.etAddTareaNombre)
         etFecha = findViewById(R.id.etAddTareaFecha)
@@ -76,22 +78,24 @@ class CrearTareaActivity : AppCompatActivity() {
     private fun addTarea() {
         var msg = ""
         if (etNombre.text.isNotEmpty() && etFecha.text.isNotEmpty() && etContenido.text.isNotEmpty()) {
+
             val nombre = etNombre.text.toString()
             val fecha = LocalDate.parse(etFecha.text.toString(), DateTimeFormatter.ofPattern("dd/MM/yyyy"))
             val contenido = etNombre.text.toString()
 
-            System.err.println(fecha.toString())
+            //System.err.println(fecha.toString())
 
             if (fecha.isAfter(LocalDate.now())) {
 
-                val tarea = Tarea(idTarea = 0, nombre = nombre,  contenido = contenido, fecha = fecha.toString(), idAsignatura = idAsignatura)
+                val tarea = Tarea(idTarea = idAsignatura, nombre = nombre,  contenido = contenido, fecha = fecha.toString(), idAsignatura = idAsignatura)
 
                 try {
                     bbdd.tareaDAO().save(tarea = tarea)
                     msg = "Tarea guardada correctamente"
                 }
                 catch (e: Exception) {
-                    msg = "Error al guardar la fecha"
+                    System.err.println(tarea)
+                    msg = "Error al guardar la tarea"
                     System.err.println(e.message)
                 }
 

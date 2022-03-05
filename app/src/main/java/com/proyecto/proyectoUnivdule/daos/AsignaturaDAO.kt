@@ -10,7 +10,7 @@ interface AsignaturaDAO {
     fun findAll(): List<Asignatura>
 
     @Query("SELECT * FROM asignatura WHERE id_asignatura = :id_asignatura")
-    fun findById(id_asignatura: String): Asignatura
+    fun findById(id_asignatura: Int): Asignatura
 
     @Delete
     fun delete(asignatura: Asignatura)

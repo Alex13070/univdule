@@ -47,7 +47,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun empezarTareas() {
-        Toast.makeText(this, "Por implementar", Toast.LENGTH_SHORT).show()
+        var intent = Intent(this, TareaActivity::class.java)
+        intent.putExtra("id_usuario", idUsuario)
+        startActivity(intent)
     }
 
     private fun empezarEstudios() {

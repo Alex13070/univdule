@@ -72,7 +72,7 @@ class ApuntesActivity : AppCompatActivity() {
 
         btnTareas = findViewById(R.id.btnApuntesTareas)
         btnTareas.setOnClickListener {
-            //Hacer cosas
+            abrirCreadorTareas()
         }
 
 
@@ -84,6 +84,12 @@ class ApuntesActivity : AppCompatActivity() {
 
         rellenarRV()
 
+    }
+
+    private fun abrirCreadorTareas() {
+        val intent = Intent(this, CrearTareaActivity::class.java)
+        intent.putExtra("id_asignatura", idAsignatura)
+        startActivity(intent)
     }
 
     //Activa el boolean que hace que borres datos

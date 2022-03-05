@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#ffdb00"
+
+    app:cardElevation="0dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="#FFE74D"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Nombre"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txtTareaNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="texto de relleno"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Asignatura"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/txtTareaAsignatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="texto de relleno"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Fecha límite"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/txtTareaFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="texto de relleno"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Contenido"
+                android:textColor="@color/black"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+
+                    android:id="@+id/txtTareaContenido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"/>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.cardview.widget.CardView>

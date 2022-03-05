@@ -101,9 +101,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:scaleX="3.6"
-        android:scaleY="3.6"
-        android:src="@mipmap/estudios_logo"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:src="@mipmap/tarea"
         app:layout_constraintBottom_toTopOf="@id/gHor1"
         app:layout_constraintEnd_toStartOf="@id/gVer4"
         app:layout_constraintStart_toEndOf="@id/gVer1"
@@ -119,23 +119,13 @@
         app:layout_constraintEnd_toStartOf="@id/gVer4"/>
 
     <Button
-        android:id="@+id/btnTareaAdd"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Registrar tarea"
-        app:layout_constraintTop_toBottomOf="@id/gHor4"
-        app:layout_constraintBottom_toTopOf="@id/gHor5"
-        app:layout_constraintStart_toEndOf="@id/gVer1"
-        app:layout_constraintEnd_toStartOf="@id/gVer2"/>
-
-    <Button
         android:id="@+id/btnTareaDelete"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="Borrar tarea"
         app:layout_constraintTop_toBottomOf="@id/gHor4"
         app:layout_constraintBottom_toTopOf="@id/gHor5"
-        app:layout_constraintStart_toEndOf="@id/gVer3"
+        app:layout_constraintStart_toEndOf="@id/gVer1"
         app:layout_constraintEnd_toStartOf="@id/gVer4"/>
 
 

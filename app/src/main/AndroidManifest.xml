@@ -14,13 +14,7 @@
         android:theme="@style/Theme.ProyectoUnivdule" >
         <activity
             android:name=".CrearTareaActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".TareaActivity"
             android:exported="true" />
@@ -44,7 +38,13 @@
             android:exported="true" />
         <activity
             android:name=".InicioSesionActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />

@@ -10,7 +10,7 @@ interface NotaDAO {
     fun findAll(): List<Nota>
 
     @Query("SELECT * FROM nota WHERE id_nota = :id_nota")
-    fun findById(id_nota: String): Nota
+    fun findById(id_nota: Int): Nota
 
     @Delete
     fun delete(nota: Nota)

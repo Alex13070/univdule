@@ -10,7 +10,7 @@ interface ApuntesDAO {
     fun findAll(): List<Apuntes>
 
     @Query("SELECT * FROM apuntes WHERE id_apuntes = :id_apuntes")
-    fun findById(id_apuntes: String): Apuntes
+    fun findById(id_apuntes: Int): Apuntes
 
     @Delete
     fun delete(apuntes: Apuntes)

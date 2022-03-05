@@ -114,6 +114,7 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
         var i = 1
         var dia = 1
         for (b: Button in botones) {
+
             if (i >= diaSemana && dia <= length){
                 b.setEnabled(true)
                 b.background.setColorFilter(Color.rgb(255, 255, 255), PorterDuff.Mode.SRC_ATOP)

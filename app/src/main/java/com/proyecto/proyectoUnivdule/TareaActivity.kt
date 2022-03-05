@@ -1,22 +1,20 @@
 package com.proyecto.proyectoUnivdule
 
 import android.content.DialogInterface
-import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.proyecto.proyectoUnivdule.adapterDatos.AdapterEstudios
+import com.proyecto.proyectoUnivdule.adapterDatos.AdapterApuntes
+import com.proyecto.proyectoUnivdule.adapterDatos.AdapterTareas
 import com.proyecto.proyectoUnivdule.administracionBBDD.UnivduleDB
 import com.proyecto.proyectoUnivdule.modelo.Tarea
 import java.lang.Exception
@@ -25,7 +23,7 @@ import kotlin.collections.ArrayList
 
 
 class TareaActivity : AppCompatActivity() {
-/*
+
     //Base de datos
     private lateinit var bbdd: UnivduleDB
     private var idUsuario: Int = 0
@@ -33,61 +31,37 @@ class TareaActivity : AppCompatActivity() {
     //RecycleViewer
     private lateinit var listaTarea: ArrayList<Tarea>
     private lateinit var listaTemporal: ArrayList<Tarea>
-    private lateinit var rvEstudios: RecyclerView
+    private lateinit var rvTareas: RecyclerView
 
     //Botones
-    private lateinit var btnAdd: Button
     private lateinit var btnBorrar: Button
 
     //Borrar datos o no
     private var borrar = false
-*/
+
+
     //Constructor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tarea)
-/*
+
         //Base de datos
         bbdd = Room.databaseBuilder(this, UnivduleDB::class.java, "univdule").allowMainThreadQueries().fallbackToDestructiveMigration().build()
         idUsuario = intent.getIntExtra("id_usuario", -1)
 
         //Botones
-        btnAdd = findViewById(R.id.btnEstudiosAdd)
-        btnAdd.setOnClickListener {
-            insertarTarea()
-        }
-        btnBorrar = findViewById(R.id.btnEstudiosDelete)
+        btnBorrar = findViewById(R.id.btnTareaDelete)
         btnBorrar.setOnClickListener {
             accionBorrar()
         }
 
-
         //RecycleViewer
-        listaTarea = llenarListaTarea()
+        listaTarea = bbdd.tareaDAO().findByUsuario(id_usuario = idUsuario) as ArrayList<Tarea>
         listaTemporal = ArrayList(listaTarea)
 
-        rvEstudios = findViewById<RecyclerView>(R.id.rvEstudios)
+        rvTareas = findViewById<RecyclerView>(R.id.rvTarea)
         rellenarRV()
-*/
-    }
-/*
-    private fun llenarListaTarea(): ArrayList<Tarea> {
-        var lista = ArrayList<Tarea>()
 
-        bbdd.estudiosDAO().findByUsuario(idUsuario).forEach {
-            bbdd.asignaturaDAO().findByEstudios(it.idEstudios).forEach {
-                bbdd.apuntesDAO().findByAsignatura(it.idAsignatura).forEach {
-                    lista.addAll((bbdd.tareaDAO().findByAsignatura(it.idAsignatura)))
-                }
-            }
-        }
-
-
-        return  lista
-    }
-
-    private fun insertarTarea() {
-        TODO("Not yet implemented")
     }
 
     //Activa el boolean que hace que borres datos
@@ -123,27 +97,21 @@ class TareaActivity : AppCompatActivity() {
 
                 if (searchText.isNotEmpty()) {
 
-                    listaEstudios.forEach {
+                    listaTarea.forEach {
 
                         if (it.nombre.toLowerCase().contains(searchText)){
                             listaTemporal.add(it)
                         }
-
                     }
-
-                    rvEstudios.adapter?.notifyDataSetChanged()
-
+                    rvTareas.adapter?.notifyDataSetChanged()
                 }
                 else {
                     listaTemporal.clear()
-                    listaTemporal.addAll(listaEstudios)
-                    rvEstudios.adapter!!.notifyDataSetChanged()
+                    listaTemporal.addAll(listaTarea)
+                    rvTareas.adapter!!.notifyDataSetChanged()
                 }
-
-
                 return false
             }
-
         })
 
         return super.onCreateOptionsMenu(menu)
@@ -151,45 +119,46 @@ class TareaActivity : AppCompatActivity() {
 
     //Rellenar el RecycleViewer
     private fun rellenarRV() {
-        rvEstudios.layoutManager = LinearLayoutManager(this)
-        var adapter = AdapterEstudios(listaTemporal)
+        rvTareas.layoutManager = LinearLayoutManager(this)
+        var adapter = AdapterTareas(listaTemporal, bbdd)
 
-        adapter.setOnItemClickListener(object : AdapterEstudios.OnItemClickListener{
+        adapter.setOnItemClickListener(object : AdapterTareas.OnItemClickListener{
             override fun onItemClick(position: Int) {
                 accionRV(position)
             }
         })
 
-        rvEstudios.adapter = adapter
+        rvTareas.adapter = adapter
     }
 
     //Accion al pulsar un campo del RecycleViewer
     private fun accionRV(position: Int) {
-        var estudios = listaEstudios[position]
+        borrar = !borrar
+
+        var estudios = listaTarea[position]
 
         if (!borrar)
-            cambiarActivity(estudios)
-        else
             borrarEstudios(estudios)
+
     }
 
     //Borrar estudios
-    private fun borrarEstudios(estudios: Estudios) {
+    private fun borrarEstudios(tarea: Tarea) {
         MaterialAlertDialogBuilder(this)
             .setTitle("Alerta")
-            .setMessage("Se borrarán los estudios seleccionados. \n${estudios.toString()}\n ¿Quieres continuar?")
+            .setMessage("Se borrará la tarea seleccionada. \n${tarea.toString()}\n ¿Quieres continuar?")
             .setPositiveButton("Aceptar", object : DialogInterface.OnClickListener{
                 override fun onClick(dialog: DialogInterface?, which: Int) {
                     var str = ""
                     try {
-                        bbdd.estudiosDAO().delete(estudios = estudios)
-                        str = "Estudios borrados correctamente"
-                        listaTemporal.remove(estudios)
-                        listaEstudios.remove(estudios)
-                        rvEstudios.adapter!!.notifyDataSetChanged()
+                        bbdd.tareaDAO().delete(tarea = tarea)
+                        str = "Tarea borrada correctamente"
+                        listaTemporal.remove(tarea)
+                        listaTarea.remove(tarea)
+                        rvTareas.adapter!!.notifyDataSetChanged()
                     }
                     catch (e: Exception) {
-                        str = "Error al guardar los estudios"
+                        str = "Error al guardar la tarea"
                     }
 
                     Toast.makeText(this@TareaActivity, str, Toast.LENGTH_SHORT).show()
@@ -198,53 +167,5 @@ class TareaActivity : AppCompatActivity() {
             .setNegativeButton("Cancelar", null)
             .show()
     }
-
-    //Cambiar de actividad
-    private fun cambiarActivity(estudios: Estudios) {
-        //Toast.makeText(this, "Cambiar de actividad", Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, AsignaturasActivity::class.java)
-        intent.putExtra("id_estudios", estudios.idEstudios)
-        try {
-            startActivity(intent)
-        }
-        catch (e: Exception) {
-            Toast.makeText(this, "Error al cambiar de actividad", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    //Regjstrar unos estudios
-    private fun registrar() {
-        var s = ""
-
-        try {
-            val nombre = etNombre.text.toString()
-            val curso = Integer.parseInt(etCurso.text.toString())
-
-            if (etNombre.text.isNotEmpty() && etCurso.text.isNotEmpty()) {
-
-                val estudios =  Estudios(0, nombre = nombre, curso = curso, idUsuario = idUsuario)
-                bbdd.estudiosDAO().save(estudios = estudios)
-
-                listaEstudios = bbdd.estudiosDAO().findByUsuario(idUsuario) as ArrayList<Estudios>
-                listaTemporal.clear()
-                listaTemporal.addAll(listaEstudios)
-                rvEstudios.adapter?.notifyDataSetChanged()
-
-                s = "Estudios guardados correctamente"
-
-            }
-            else
-                s = "Faltan campos por rellenar"
-
-
-        }
-        catch (e: Exception) {
-            System.err.println(e.message)
-            s = "Error al guardar los estudios"
-        }
-
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
-    }
-  */
 
 }
