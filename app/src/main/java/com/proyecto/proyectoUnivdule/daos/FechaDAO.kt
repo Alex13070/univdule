@@ -9,7 +9,7 @@ interface FechaDAO {
     fun findAll(): List<Fecha>
 
     @Query("SELECT * FROM fecha WHERE id_fecha = :id_fecha")
-    fun findById(id_fecha: String): Fecha
+    fun findById(id_fecha: Int): Fecha
 
     @Delete
     fun delete(fecha: Fecha)

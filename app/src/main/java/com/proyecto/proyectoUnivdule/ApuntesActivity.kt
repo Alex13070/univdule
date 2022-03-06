@@ -115,7 +115,7 @@ class ApuntesActivity : AppCompatActivity() {
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                TODO("Not yet implemented")
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
@@ -179,19 +179,19 @@ class ApuntesActivity : AppCompatActivity() {
     private fun borrarEstudios(apuntes: Apuntes) {
         MaterialAlertDialogBuilder(this)
             .setTitle("Alerta")
-            .setMessage("Se borrarán los estudios seleccionados. \n${apuntes.toString()}\n ¿Quieres continuar?")
+            .setMessage("Se borrarán los apuntes seleccionados. \n${apuntes.toString()}\n ¿Quieres continuar?")
             .setPositiveButton("Aceptar", object : DialogInterface.OnClickListener{
                 override fun onClick(dialog: DialogInterface?, which: Int) {
                     var str = ""
                     try {
                         bbdd.apuntesDAO().delete(apuntes = apuntes)
-                        str = "Estudios borrados correctamente"
+                        str = "Apuntes borrados correctamente"
                         listaTemporal.remove(apuntes)
                         listaApuntes.remove(apuntes)
                         rvApuntes.adapter!!.notifyDataSetChanged()
                     }
                     catch (e: Exception) {
-                        str = "Error al guardar los estudios"
+                        str = "Error al guardar los apuntes"
                     }
 
                     Toast.makeText(this@ApuntesActivity, str, Toast.LENGTH_SHORT).show()
@@ -204,6 +204,7 @@ class ApuntesActivity : AppCompatActivity() {
     //Cambiar de actividad
     private fun cambiarActivity(apuntes: Apuntes) {
         val intent = Intent(this, VisualizarPdfActivity::class.java)
+        intent.putExtra("id_asignatura", idAsignatura)
         intent.putExtra("url", apuntes.direccion)
         startActivity(intent)
     }
@@ -228,7 +229,7 @@ class ApuntesActivity : AppCompatActivity() {
                 listaTemporal.addAll(listaApuntes)
                 rvApuntes.adapter!!.notifyDataSetChanged()
 
-                s = "Estudios guardados correctamente"
+                s = "Apuntes guardados correctamente"
 
             }
             else
@@ -238,7 +239,7 @@ class ApuntesActivity : AppCompatActivity() {
         }
         catch (e: Exception) {
             System.err.println(e.message)
-            s = "Error al guardar los estudios"
+            s = "Error al guardar los apuntes"
         }
 
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show()

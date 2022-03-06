@@ -165,19 +165,19 @@ class AsignaturasActivity : AppCompatActivity() {
     private fun borrarEstudios(asignatura: Asignatura) {
         MaterialAlertDialogBuilder(this)
             .setTitle("Alerta")
-            .setMessage("Se borrarán los estudios seleccionados. \n${asignatura.toString()}\n ¿Quieres continuar?")
+            .setMessage("Se borrará la asignatura seleccionada. \n${asignatura.toString()}\n ¿Quieres continuar?")
             .setPositiveButton("Aceptar", object : DialogInterface.OnClickListener{
                 override fun onClick(dialog: DialogInterface?, which: Int) {
                     var str = ""
                     try {
                         bbdd.asignaturaDAO().delete(asignatura = asignatura)
-                        str = "Estudios borrados correctamente"
+                        str = "Asignatura borrada correctamente"
                         listaTemporal.remove(asignatura)
                         listaAsignaturas.remove(asignatura)
                         rvAsignatura.adapter!!.notifyDataSetChanged()
                     }
                     catch (e: Exception) {
-                        str = "Error al guardar los estudios"
+                        str = "Error al guardar la asignatura"
                     }
 
                     Toast.makeText(this@AsignaturasActivity, str, Toast.LENGTH_SHORT).show()
@@ -216,7 +216,7 @@ class AsignaturasActivity : AppCompatActivity() {
                 listaTemporal.addAll(listaAsignaturas)
                 rvAsignatura.adapter!!.notifyDataSetChanged()
 
-                s = "Estudios guardados correctamente"
+                s = "Asignatura guardada correctamente"
 
             }
             else
@@ -226,7 +226,7 @@ class AsignaturasActivity : AppCompatActivity() {
         }
         catch (e: Exception) {
             System.err.println(e.message)
-            s = "Error al guardar los estudios"
+            s = "Error al guardar la asignatura"
         }
 
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
