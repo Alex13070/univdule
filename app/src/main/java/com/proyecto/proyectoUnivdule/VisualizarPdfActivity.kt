@@ -35,8 +35,5 @@ class VisualizarPdfActivity : AppCompatActivity() {
             intent.putExtra("id_asignatura", id)
             startActivity(intent)
         }
-
     }
-
-
 }
