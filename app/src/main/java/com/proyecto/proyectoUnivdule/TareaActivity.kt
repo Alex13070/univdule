@@ -18,7 +18,10 @@ import com.proyecto.proyectoUnivdule.adapterDatos.AdapterTareas
 import com.proyecto.proyectoUnivdule.administracionBBDD.UnivduleDB
 import com.proyecto.proyectoUnivdule.modelo.Tarea
 import java.lang.Exception
+import java.time.LocalDate
 import java.util.*
+import java.util.stream.Collectors
+import kotlin.Comparator
 import kotlin.collections.ArrayList
 
 
@@ -38,6 +41,7 @@ class TareaActivity : AppCompatActivity() {
 
     //Borrar datos o no
     private var borrar = false
+    val comparadorFechas: (Tarea, Tarea) -> Int = { o1: Tarea, o2: Tarea -> LocalDate.parse(o1.fecha).compareTo(LocalDate.parse(o2.fecha))}
 
 
     //Constructor
@@ -56,11 +60,14 @@ class TareaActivity : AppCompatActivity() {
         }
 
         //RecycleViewer
-        listaTarea = bbdd.tareaDAO().findByUsuario(id_usuario = idUsuario) as ArrayList<Tarea>
+        listaTarea = bbdd.tareaDAO().findByUsuario(id_usuario = idUsuario)
+            .stream().sorted(comparadorFechas).collect(Collectors.toList()) as ArrayList<Tarea>
+
         listaTemporal = ArrayList(listaTarea)
 
         rvTareas = findViewById<RecyclerView>(R.id.rvTarea)
         rellenarRV()
+
 
     }
 

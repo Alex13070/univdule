@@ -8,10 +8,15 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.room.Room
+import com.proyecto.proyectoUnivdule.administracionBBDD.UnivduleDB
+import com.proyecto.proyectoUnivdule.modelo.Tarea
 import java.time.LocalDate
 import java.time.Month
 import java.time.Year
 import java.util.*
+import java.util.stream.Collectors
+import kotlin.collections.ArrayList
 
 class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -21,14 +26,41 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnRetroceder: Button
     private lateinit var tvMes: TextView
 
+    private lateinit var bbdd: UnivduleDB
+    private lateinit var dias: java.util.HashMap<LocalDate, java.util.ArrayList<Tarea>>
+    private var idUsuario: Int = -1
+
     private var date = LocalDate.of(LocalDate.now().year, LocalDate.now().monthValue, 1)
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendario)
+
+        idUsuario = intent.getIntExtra("id_usuario", -1)
+
+        dias = HashMap<LocalDate, java.util.ArrayList<Tarea>>()
+
         botones = ArrayList()
+
+        bbdd = Room.databaseBuilder(this, UnivduleDB::class.java, "univdule").allowMainThreadQueries().fallbackToDestructiveMigration().build()
+
+
+        for( i in bbdd.tareaDAO().findByUsuario(idUsuario)) {
+            var str = i.fecha.split("-").stream().map { it -> Integer.parseInt(it) }.collect(Collectors.toList())
+            var fecha = LocalDate.of(str[0], str[1], str[2])
+
+            if (!dias.containsKey(fecha)) {
+                var lista = java.util.ArrayList<Tarea>()
+                lista.add(i)
+                dias.put(fecha, lista)
+            }
+            else
+                dias.get(fecha)?.add(i)
+
+
+        }
+
+        //System.err.println("Hay ${bbdd.tareaDAO().findByUsuario(idUsuario).size}")
 
         botones.add(findViewById<Button>(R.id.btn1))
         botones.add(findViewById<Button>(R.id.btn2))
@@ -105,7 +137,13 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
         var btn: Button = v as Button
         var dia = Integer.parseInt(btn.text.toString())
         var fecha = LocalDate.of(date.year, date.monthValue, dia)
-        //TODO("Sistema de notificaciones de la aplicacion")
+
+        var mensaje = "No tienes nada programado para este dia"
+
+        if (dias.containsKey(fecha))
+            mensaje = "Tienes ${dias.get(fecha)?.size} tarea${if (dias.get(fecha)?.size!! > 1) "s" else ""} programada${if (dias.get(fecha)?.size!! > 1) "s" else ""}"
+
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
     }
 
     private fun procesarFecha() {
@@ -113,11 +151,16 @@ class CalendarioActivity : AppCompatActivity(), View.OnClickListener {
         var diaSemana = date.dayOfWeek.value
         var i = 1
         var dia = 1
-        for (b: Button in botones) {
 
+        for (b: Button in botones) {
             if (i >= diaSemana && dia <= length){
                 b.setEnabled(true)
-                b.background.setColorFilter(Color.rgb(255, 255, 255), PorterDuff.Mode.SRC_ATOP)
+
+                if (!dias.containsKey(LocalDate.of(date.year, date.monthValue, dia)))
+                    b.background.setColorFilter(Color.rgb(255, 255, 255), PorterDuff.Mode.SRC_ATOP)
+                else
+                    b.background.setColorFilter(Color.rgb(0, 255, 255), PorterDuff.Mode.SRC_ATOP)
+
                 b.text = dia.toString()
                 dia++
             }
